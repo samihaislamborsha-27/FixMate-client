@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { apiRequest } from "@/lib/api";
+import { authClient } from "@/lib/auth-client";
 import { Search, Wrench, MapPin, ArrowUpDown, RefreshCw } from "lucide-react";
 
 export default function ServicesPage() {
+  const { data: session } = authClient.useSession();
   const [services, setServices] = useState([]);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
@@ -113,7 +115,13 @@ export default function ServicesPage() {
                   <span className="flex items-center gap-1 text-xs text-slate-500"><MapPin size={14} /> {service.area}</span>
                 </div>
                 <p className="mt-3 text-xs text-slate-500">Technician: {service.technicianName}</p>
-                <Link href="/login" className="mt-5 block rounded-xl bg-blue-700 py-3 text-center text-sm font-bold text-white hover:bg-blue-800">Login to Book</Link>
+                {!session ? (
+                  <Link href="/login?redirect=/services" className="mt-5 block rounded-xl bg-blue-700 py-3 text-center text-sm font-bold text-white hover:bg-blue-800">Sign in to Book</Link>
+                ) : session.user?.role === "customer" ? (
+                  <Link href={`/bookings/new?serviceId=${service._id}`} className="mt-5 block rounded-xl bg-blue-700 py-3 text-center text-sm font-bold text-white hover:bg-blue-800">Book This Service</Link>
+                ) : (
+                  <Link href={session.user?.role === "admin" ? "/admin" : "/technician"} className="mt-5 block rounded-xl border border-blue-200 py-3 text-center text-sm font-bold text-blue-700">Go to Dashboard</Link>
+                )}
               </article>
             ))}
           </div>
@@ -122,3 +130,4 @@ export default function ServicesPage() {
     </main>
   );
 }
+

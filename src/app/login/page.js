@@ -29,7 +29,8 @@ export default function LoginPage() {
 
       if (data) {
         toast.success("Welcome back to FixMate!");
-        router.push("/dashboard");
+        const role = data.user?.role || "customer";
+        router.push(role === "admin" ? "/admin" : role === "technician" ? "/technician" : "/dashboard");
       }
     } catch (error) {
       toast.error(error.message || "Something went wrong.");
@@ -89,3 +90,4 @@ export default function LoginPage() {
     </main>
   );
 }
+
