@@ -14,12 +14,12 @@ export const auth = betterAuth({
 
   trustedOrigins: [
     "http://localhost:3000",
-    "http://127.0.0.1:3000"
+    "http://127.0.0.1:3000",
   ],
 
   emailAndPassword: {
     enabled: true,
-    minPasswordLength: 8
+    minPasswordLength: 8,
   },
 
   user: {
@@ -29,25 +29,25 @@ export const auth = betterAuth({
         type: ["customer", "technician"],
         required: false,
         defaultValue: "customer",
-        input: true
+        input: true,
       },
       phone: {
         type: "string",
         required: false,
-        input: true
+        input: true,
       },
       area: {
         type: "string",
         required: false,
-        input: true
+        input: true,
       },
       bio: {
         type: "string",
         required: false,
-        input: true
-      }
-    }
+        input: true,
+      },
+    },
   },
 
-  plugins: [jwt()]
+  plugins: [jwt()],
 });
