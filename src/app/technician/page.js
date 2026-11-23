@@ -28,11 +28,25 @@ export default function TechnicianPage() {
           <h1 className="mt-2 text-3xl font-black">Welcome, {session.user.name}</h1>
           <p className="mt-3 text-slate-600">Manage your repair services and professional activities.</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/services" className="rounded-xl bg-blue-700 px-5 py-3 font-bold text-white">Explore Services</Link>
-            <Link href="/dashboard" className="rounded-xl border px-5 py-3 font-bold">My Account</Link>
+            <a href="/technician/services/new" className="rounded-lg bg-blue-700 px-5 py-3 font-semibold text-white hover:bg-blue-800">
+              + Add a Service
+            </a>
+            <a href="/services" className="rounded-lg border px-5 py-3 font-semibold">
+              Explore Services
+            </a>
+            <a href="/dashboard" className="rounded-lg border px-5 py-3 font-semibold">
+              My Account
+            </a>
+          </div>
+          <p className="hidden"></p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            
+            
           </div>
         </section>
       </div>
     </main>
   );
 }
+
+

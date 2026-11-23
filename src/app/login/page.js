@@ -41,7 +41,7 @@ export default function LoginPage() {
 
   return (
     <main className="flex min-h-screen bg-slate-100">
-      <section className="relative hidden w-5/12 flex-col justify-between overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-blue-800 p-12 text-white lg:flex">
+      <section className="relative hidden w-5/12 flex-col justify-between overflow-hidden bg-linear-to-br from-slate-950 via-blue-950 to-blue-800 p-12 text-white lg:flex">
         <Link href="/" className="text-3xl font-black">FixMate<span className="text-orange-400">.</span></Link>
         <div className="relative z-10">
           <div className="mb-6 inline-flex rounded-2xl bg-orange-500 p-4"><Wrench size={34} /></div>
