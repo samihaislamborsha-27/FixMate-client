@@ -20,30 +20,9 @@ const benefits = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-          <Link href="/" className="text-2xl font-black tracking-tight text-blue-700">
-            FixMate<span className="text-orange-500">.</span>
-          </Link>
+      
 
-          <div className="hidden items-center gap-8 text-sm font-semibold text-slate-600 md:flex">
-            <Link href="/" className="hover:text-blue-700">Home</Link>
-            <a href="#services" className="hover:text-blue-700">Services</a>
-            <a href="#about" className="hover:text-blue-700">Why FixMate</a>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Link href="/login" className="px-2 py-2 text-sm font-semibold text-slate-700 hover:text-blue-700">
-              Sign in
-            </Link>
-            <Link href="/register" className="rounded-lg bg-blue-700 px-4 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-blue-800">
-              Get Started
-            </Link>
-          </div>
-        </div>
-      </nav>
-
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-blue-800 px-5 py-20 text-white md:px-8 md:py-28">
+      <section className="relative overflow-hidden bg-linear-to-br from-slate-950 via-blue-950 to-blue-800 px-5 py-20 text-white md:px-8 md:py-28">
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-blue-400/10 blur-3xl" />
         <div className="absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-orange-400/10 blur-3xl" />
 
@@ -163,3 +142,4 @@ export default function Home() {
     </main>
   );
 }
+
