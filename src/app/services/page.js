@@ -42,15 +42,6 @@ export default function ServicesPage() {
 
   return (
     <main className="min-h-screen bg-slate-50">
-      <nav className="border-b bg-white px-5 py-4">
-        <div className="mx-auto flex max-w-7xl items-center justify-between">
-          <Link href="/" className="text-2xl font-black text-blue-700">FixMate.</Link>
-          <div className="flex gap-4 text-sm font-semibold">
-            <Link href="/login" className="text-slate-600">Login</Link>
-            <Link href="/register" className="rounded-lg bg-blue-700 px-4 py-2 text-white">Join FixMate</Link>
-          </div>
-        </div>
-      </nav>
 
       <section className="bg-gradient-to-r from-blue-950 to-blue-700 px-5 py-14 text-white">
         <div className="mx-auto max-w-7xl">
@@ -130,4 +121,5 @@ export default function ServicesPage() {
     </main>
   );
 }
+
 
